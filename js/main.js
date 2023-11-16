@@ -5,6 +5,9 @@
   const hotspots = document.querySelectorAll(".Hotspot");
   const materialTemplate = document.querySelector("#materials-template");
   const materialList = document.querySelector("#material-list");
+  const hotspotTemplate = document.querySelector("#hotspot-template");
+  const hotspotAnnotation = document.querySelector(".HotspotAnnotation")
+
   //This information needs to be removed then pulled with an AJAX Call using the Fetch API
   //this is the api url https://swiftpixel.com/earbud/api/infoboxes"
 
@@ -63,15 +66,25 @@
       hotspot.style.display = "block";
     });
   }
-
+  loadInfoBoxes ();
   function loadInfoBoxes() {
+    infoBoxes.forEach(infoBoxes => {
+  
+    //clone the template
+    const clone = hotspotTemplate.content.cloneNode(true);
+    //populate the clone template
+    const hotspotTitle = clone.querySelector(".hotspot-title");
+    hotspotTitle.textContent = infoBoxes.title;
+    const hotspotText = clone.querySelector(".hotspot-text");
+    hotspotText.textContent = infoBoxes.text;
 
+    hotspotAnnotation.appendChild(clone);
+
+})
     //make AJAX call here
     //use this url https://swiftpixel.com/earbud/api/infoboxes
     //theForEach loop will go inside (/promise)
-function infoBoxes(){
-  
-}
+  }
 
     infoBoxes.forEach((infoBox, index) => {
       let selected = document.querySelector(`#hotspot-${index+1}`);
@@ -85,7 +98,8 @@ function infoBoxes(){
       selected.appendChild(titleElement);
       selected.appendChild(textElement);
     });
-  }
+  
+
   loadInfoBoxes();
   function loadMaterialInfo(){
     //make ajax call here:
