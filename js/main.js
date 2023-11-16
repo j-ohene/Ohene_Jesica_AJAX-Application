@@ -95,8 +95,12 @@
       const textElement = document.createElement('p');
       textElement.textContent = infoBox.text;
 
+      const imgElement = document.createElement('img');
+      imgElement.src = infoBox.image;
+      
       selected.appendChild(titleElement);
       selected.appendChild(textElement);
+      selected.appendChild(imgElement);
     });
   
 
