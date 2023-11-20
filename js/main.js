@@ -77,7 +77,8 @@
     hotspotTitle.textContent = infoBoxes.title;
     const hotspotText = clone.querySelector(".hotspot-text");
     hotspotText.textContent = infoBoxes.text;
-
+    const hotspotImg = clone.querySelector(".hotspot-image");
+    hotspotImg.imgContent = infoBoxes.img;
     hotspotAnnotation.appendChild(clone);
 
 })
@@ -95,8 +96,9 @@
       const textElement = document.createElement('p');
       textElement.textContent = infoBox.text;
 
-      const imgElement = document.createElement(`img-${index+1}`);
-      imgElement.src = infoBox.image;
+      const imgElement = document.createElement('img');
+      imgElement = infoBox.img;
+      document.querySelector = (`images/earbud-${index+1}.jpg`);
       
       selected.appendChild(titleElement);
       selected.appendChild(textElement);
