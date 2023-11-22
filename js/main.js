@@ -255,6 +255,7 @@ fetch("https://swiftpixel.com/earbud/api/infoboxes")
 
   loadMaterialInfo();
   function loadMaterialInfo(){
+    materialList.innerHTML = spinner; 
     fetch("https://swiftpixel.com/earbud/api/materials")
     .then(response => response.json())
     .then(materialListData=> {
@@ -270,10 +271,13 @@ fetch("https://swiftpixel.com/earbud/api/infoboxes")
 
 
       //appand the populated template to the list
+      materialList.innerHTML = "unable load full list";
       materialList.appendChild(clone);
-    });
-
+      
     })
+   
+    })
+    .catch(error => console.error(error));
 }
 
  loadMaterialInfo();
