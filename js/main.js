@@ -8,7 +8,6 @@
   const hotspotTemplate = document.querySelector(".hotspot-template");
   const hotspotAnnotation = document.querySelector(".HotspotAnnotation")
 
- 
 
 
     //This information needs to be removed then pulled with an AJAX Call using the Fetch API
