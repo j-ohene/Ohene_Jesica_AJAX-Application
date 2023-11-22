@@ -150,7 +150,7 @@ model-viewer[ar-status=session-started] > #ar-prompt {
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
-.hotspot-image{
-  max-width: 250px;
-  align-content: center;
-    }/*# sourceMappingURL=main.css.map */
+
+#material-list svg {
+  max-width: 100px;
+}/*# sourceMappingURL=main.css.map */
