@@ -1,8 +1,6 @@
 <h1>AJAX Apllication</h1>
 
-
 <h2>Jesica Ohene</h2>
-
 
 
 <h2>Built with:</h2>
